@@ -188,7 +188,7 @@ class AnnouncePlayer : public PlayerScript
 public:
     AnnouncePlayer() : PlayerScript("AnnouncePlayer") { }
 
-    void OnLevelChanged(Player* player, uint8 oldLevel) override
+    void OnPlayerLevelChanged(Player* player, uint8 oldLevel) override
     {
         if (!sConfig->enabled) return; 
 
@@ -226,7 +226,7 @@ public:
     }
 
     // Inspired by https://github.com/azerothcore/mod-boss-announcer
-    void OnCreatureKill(Player* player, Creature* boss) override
+    void OnPlayerCreatureKill(Player* player, Creature* boss) override
     {
         if (sConfig->announceWorldBossDeath && boss->GetMap()->IsRaid() && boss->GetLevel() > 80 && boss->IsDungeonBoss())
         {
