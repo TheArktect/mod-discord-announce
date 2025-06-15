@@ -219,7 +219,7 @@ public:
         uint8 level = killed->GetLevel(); 
         if (level >= (uint8) sConfig->playerDeath)
         {
-            std::string message = Acore::StringFormat("{} died at level {}.", killed->GetName(), level);
+            std::string message = Acore::StringFormat("{} died at level {}, killed by: {}.", killed->GetName(), level, killer->GetName());
             LOG_INFO("server", "MOD DiscordAnnounce: {}", message);
             sHTTPManager->EnqueueMessage(message);
         }

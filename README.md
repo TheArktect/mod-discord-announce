@@ -12,9 +12,9 @@ PlayerScript:
 // When a player dies on a certain level.
 void OnPlayerKilledByCreature(Creature* killer, Player* killed);
 // When a player levels up.
-void OnLevelChanged(Player* player, uint8 oldLevel);
+void OnPlayerLevelChanged(Player* player, uint8 oldLevel);
 // Annouce World Boss death.
-void OnCreatureKill(Player*, Creature*);
+void OnPlayerCreatureKill(Player*, Creature*);
 ```
 
 GuildScript:
